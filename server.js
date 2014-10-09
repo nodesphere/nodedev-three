@@ -9,8 +9,9 @@ io = require('socket.io').listen(server, { log: true });
 //
 
 // Start node HTTP server
-if (server.listen(5555))
-	console.log("...server up!"); 
+port = process.env.PORT || 5555
+if (server.listen(port))
+  console.log("...server up on " + port + "!"); 
 
 noomapPublicRootPath = './pub/';
 
