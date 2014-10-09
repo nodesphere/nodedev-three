@@ -1,0 +1,777 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"receive",
+				"receiveNodesphere"
+			],
+			[
+				"aui",
+				"audioURL"
+			],
+			[
+				"play",
+				"playAudio"
+			],
+			[
+				"receiv",
+				"receiveMessage"
+			],
+			[
+				"res",
+				"resultData"
+			],
+			[
+				"space",
+				"spaceTitle"
+			],
+			[
+				"targe",
+				"targetSpace"
+			],
+			[
+				"scre",
+				"screenWidth"
+			],
+			[
+				"sc",
+				"screenWidth"
+			],
+			[
+				"scr",
+				"screenHeight"
+			],
+			[
+				"mdi",
+				"mdist2"
+			],
+			[
+				"md",
+				"mdist1"
+			],
+			[
+				"mdist",
+				"mdist1"
+			],
+			[
+				"target",
+				"targetSpaceHolon"
+			],
+			[
+				"art",
+				"artiWidget"
+			],
+			[
+				"mouse",
+				"mouseJustReleased"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"j",
+				"jscode"
+			],
+			[
+				"el",
+				"ellipse"
+			],
+			[
+				"ty",
+				"type"
+			],
+			[
+				"c",
+				"csize"
+			],
+			[
+				"draw",
+				"drawCode"
+			],
+			[
+				"GRAND",
+				"grandChildren"
+			],
+			[
+				"gra",
+				"grandChildren"
+			],
+			[
+				"mou",
+				"mouseDownFor"
+			],
+			[
+				"o",
+				"Object"
+			],
+			[
+				"map",
+				"mappingEventHolon"
+			],
+			[
+				"dragging",
+				"draggingHolon"
+			],
+			[
+				"deacti",
+				"deactivateHolon"
+			],
+			[
+				"arti",
+				"artiCache"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"data",
+				"dataArray"
+			],
+			[
+				"fil",
+				"files"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"mouseD",
+				"mouseDownFor"
+			],
+			[
+				"selec",
+				"selectedHolon"
+			],
+			[
+				"sele",
+				"selectedHolon"
+			],
+			[
+				"mouseDr",
+				"mouseDragged"
+			],
+			[
+				"screen",
+				"screenHeight"
+			],
+			[
+				"reply",
+				"replytt"
+			],
+			[
+				"Te",
+				"Teletyper"
+			],
+			[
+				"te",
+				"text"
+			],
+			[
+				"update",
+				"updatePosition"
+			],
+			[
+				"mos",
+				"mouseY"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"time",
+				"timeSpace"
+			],
+			[
+				"get",
+				"getSize"
+			],
+			[
+				"start",
+				"startTime"
+			],
+			[
+				"scree",
+				"screenWidth"
+			],
+			[
+				"des",
+				"destroyLinkedHolon"
+			],
+			[
+				"tare",
+				"targetSpace"
+			],
+			[
+				"holon",
+				"holonTrail"
+			],
+			[
+				"tar",
+				"targetted"
+			],
+			[
+				"show",
+				"showCouplings"
+			],
+			[
+				"arc",
+				"arcAngle"
+			],
+			[
+				"wid",
+				"widgets"
+			],
+			[
+				"Holon",
+				"HolonViewer"
+			],
+			[
+				"Bac",
+				"backup"
+			],
+			[
+				"edit",
+				"editor"
+			],
+			[
+				"sort",
+				"sortBy"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "pub/index.html",
+			"settings":
+			{
+				"buffer_size": 3893,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// Copyright Chris Larcombe, 2014\n\nvar midX, midY;\nvar screenWidth, screenHeight;\n\n\nwindow.onresize = function()\n{\n    setCanvasSize();\n};\n\nvoid setCanvasSize()\n{\n	// Gauge the proper height\n	if( jQuery(document).height() > jQuery(window).height() )\n	    setupHeight = jQuery(document).height();\n	else\n	    setupHeight = jQuery(window).height();\n	jQuery('canvas').width(jQuery(window).width());\n	jQuery('canvas').height(setupHeight);\n	size(jQuery(window).width(), setupHeight);\n\n	// Set variables to keep track of midpoint\n	midX = jQuery(window).width()/2;\n	midY = setupHeight/2;\n	\n	// Store width and height\n	screenWidth = jQuery(window).width();\n	screenHeight = setupHeight;\n}\n\nvoid setup()\n{\n	// Set framerate\n	frameTimer = 0;\n	resetFrameRate();\n	\n	// Set initial canvas size\n	setCanvasSize();\n	\n	// Fix 'double-click-lose-focus' bug\n	var canvas = document.getElementById('sketch');\n	canvas.onselectstart = function () { return false; }\n}\n\nvoid resetFrameRate()\n{\n	if (frameTimer >= 100)\n		frameRate(100);\n		\n	frameTimer = 0;\n}\n\nvoid draw()\n{\n	frameTimer++;\n	if (frameTimer == 500)\n		frameRate(4);\n\n	background(0,0,0);\n\n	fill(0,0,255);\n\n	ellipse(midX,midY,100,100);\n}\n\nvoid mouseReleased ()\n{\n	resetFrameRate();\n}\n\nvoid mouseDragged()\n{\n}\n\nvoid mousePressed()\n{\n}",
+			"file": "pde/vis.pde",
+			"file_size": 1343,
+			"file_write_time": 1411807722000000,
+			"settings":
+			{
+				"buffer_size": 1266,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 2383,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/larky/holos/pro/noomap/index.html",
+		"/home/larky/holos/pro/noomap/server.js",
+		"/home/larky/holos/pro/noomap0.5/server.js",
+		"/home/larky/holos/pro/noomap0.5/pub/index.html",
+		"/home/larky/holos/pro/holos/index.html",
+		"/home/larky/holos/pro/noomap/pde/vis2.pde",
+		"/home/larky/holos/pro/noomap0.5/pub/js/index.js",
+		"/home/larky/holos/pro/noomap/pde/ArtiWidget.pde",
+		"/home/larky/holos/pro/holos/json/socket_config.json",
+		"/home/larky/holos/pro/holos/fun/activateLinkedHolon.js",
+		"/home/larky/holos/pro/holos/fun/getGeoHolonPack.js",
+		"/home/larky/holos/pro/holos/fun/partCoupled.js",
+		"/tmp/fz3temp-1/index 2.html",
+		"/tmp/fz3temp-1/core 2.js",
+		"/home/larky/holos/pro/holos/pde/NooSpaceViewer.pde",
+		"/home/larky/holos/pro/holos/pde/HolonWidget.pde",
+		"/home/larky/holos/pro/holos/fun/receiveMessage.js",
+		"/home/larky/holos/pro/holos/fun/displayHolon.js",
+		"/home/larky/holos/pro/holos/pde/ArtiWidget.pde",
+		"/home/larky/holos/pro/noomap/pub/js/nm_Viewer.js",
+		"/tmp/fz3temp-1/index.html",
+		"/tmp/fz3temp-1/core.js",
+		"/tmp/gftp-view.YyJ0ix.html",
+		"/home/larky/holos/pro/noomap/noola/app.html",
+		"/home/larky/holos/pro/holos/js/vis.js",
+		"/home/larky/holos/pro/holos/pde/GeoSpaceViewer.pde",
+		"/home/larky/holos/pro/holos/pde/SpaceWidget.pde",
+		"/home/larky/holos/pro/holos/pde/Teletyper.pde",
+		"/home/larky/holos/pro/holos/pde/vis.pde",
+		"/home/larky/holos/pro/holos/pde/WidgetMover.pde",
+		"/tmp/gftp-view.4T5hhd.html",
+		"/home/larky/holos/pro/holos/pde/TimeSpaceViewer.pde",
+		"/tmp/fz3temp-1/wakeUp.js",
+		"/home/larky/holos/pro/holos/fun/wakeUp.js",
+		"/tmp/fz3temp-1/functionReloader.js",
+		"/home/larky/holos/pro/holos/fun/holosInterface.js",
+		"/tmp/fz3temp-1/holosInterface.js",
+		"/tmp/fz3temp-1/socket_config.json",
+		"/tmp/fz3temp-1/package.json",
+		"/home/larky/holos/pro/holos/node_modules/socket.io/package.json",
+		"/home/larky/holos/pro/holos/node_modules/socket.io/index.js",
+		"/home/larky/holos/pro/holos/node_modules/socket.io/Readme.md",
+		"/home/larky/holos/pro/holos/fun/functionReloader.js",
+		"/home/larky/holos/pro/holos/fun/mind.js",
+		"/home/larky/holos/pro/experiments/imap.js",
+		"/home/larky/holos/pro/holos/fun/playTune.js",
+		"/home/larky/holos/pro/holos/fun/geo.js",
+		"/home/larky/holos/pro/holos/fun/experiment.js",
+		"/home/larky/holos/pro/holos/fun/reloadActivatedHolon.js",
+		"/home/larky/holos/pro/holos/fun/createHolonInActivatedHolon.js",
+		"/home/larky/holos/pro/holos/fun/describeActivatedHolon.js",
+		"/home/larky/holos/pro/holos/fun/mapFunctionsInActivatedFileHolon.js",
+		"/home/larky/holos/pro/holos/fun/renameActivatedHolon.js",
+		"/home/larky/holos/pro/holos/fun/coupleActivatedHolonToFolder.js",
+		"/home/larky/holos/pro/holos/fun/getHolonPack.js",
+		"/home/larky/holos/pro/holos/fun/displayHolonOnScreen.js",
+		"/home/larky/GB.txt",
+		"/home/larky/holos/pro/holos/fun_inactive/noomap.js",
+		"/home/larky/holos/pro/holos/fun/noomap.js",
+		"/home/larky/holos/pro/holos/test.js",
+		"/home/larky/holos/pro/experiments/yt.js",
+		"/media/larky/Transcend/speechServer.js",
+		"/home/larky/holos/pro/holos/fun/speak.js",
+		"/home/larky/holos/pro/holos/pde/Widget.pde",
+		"/home/larky/holos/pro/holos/fun/emitOnAllSockets.js",
+		"/home/larky/holos/pro/noomap/noola/noola.js",
+		"/home/larky/holos/pro/noomap/noola/fun/playVideoByTitle.js",
+		"/home/larky/holos/pro/holos/pde/HolonViewer.pde",
+		"/home/larky/holos/pro/holos/pde/CreditCounter.pde",
+		"/home/larky/holos/pro/holos/pde/TimeProgressWidget.pde",
+		"/home/larky/holos/pro/experiments/wikipedia.js",
+		"/home/larky/holos/pro/holos/fun/createHolon.js",
+		"/home/larky/holos/pro/holos/fun/changeLink.js",
+		"/home/larky/holos/pro/holos/fun/destroyLink.js",
+		"/home/larky/holos/pro/holos/fun/destroyLinkedHolon.js",
+		"/home/larky/holos/pro/holos/fun/linkHolons.js",
+		"/home/larky/holos/pro/holos/fun/changeHolon.js",
+		"/home/larky/holos/pro/holos/fun/deleteActivatedHolons.js",
+		"/home/larky/holos/pro/holos/fun/broadcastMessage.js",
+		"/home/larky/holos/pro/experiments/stats.js",
+		"/home/larky/holos/pro/experiments/mp4.js",
+		"/home/larky/holos/pro/holos/fun/mapVideoLogs.js",
+		"/home/larky/node_modules/mp4js/dist/mp4.js",
+		"/home/larky/holos/pro/experiments/parser.js",
+		"/home/larky/nwm/nwm-user-sample.js",
+		"/home/larky/holos/pro/holos/fun/moveHolon.js",
+		"/home/larky/holos/pro/holos/fun/mind.js+20",
+		"/home/larky/holos/pro/holos/js/GeoSpaceViewer.pde",
+		"/usr/share/xsessions/fluxbox.desktop",
+		"/usr/share/xsessions/nwm.desktop",
+		"/media/larky/Data/Backup/noomap0.4_2013_08_08/noomap/js/ws_Viewer.js",
+		"/home/larky/holos/pro/holos/say.vbs",
+		"/home/larky/.fluxbox/keys",
+		"/home/larky/.fluxbox/menu",
+		"/C/holos/pro/holos/fun/holosInterface.js",
+		"/C/holos/pro/holos/fun/createHolon.js",
+		"/C/holos/pro/holos/fun/partCoupled.js",
+		"/C/holos/pro/holos/json/socket_config.json",
+		"/C/holos/pro/holos/fun/destroyLinkedHolon.js",
+		"/C/holos/pro/holos/say.vbs",
+		"/C/holos/pro/holos/fun/deleteActivatedHolons.js",
+		"/C/holos/pro/holos/fun/renameActivatedHolon.js",
+		"/C/holos/pro/holos/index.html",
+		"/C/holos/pro/experiments/comm.py",
+		"/C/holos/pro/experiments/create.py",
+		"/C/holos/pro/experiments/ivonaspeech.js",
+		"/C/holos/pro/holos/fun/displayHolon.js",
+		"/C/holos/pro/holos/js/vis.js",
+		"/C/holos/pro/holos/fun/describeActivatedHolon.js",
+		"/C/holos/pro/holos/fun/receiveMessage.js",
+		"/C/holos/pro/experiments/order.js",
+		"/C/holos/pro/holos/lib/speech-recognizer.js",
+		"/C/holos/pro/holos/fun/mind.js",
+		"/C/holos/pro/holos/fun/getHolonPack.js",
+		"/C/holos/pro/holos/fun/changeHolon.js",
+		"/C/holos/pro/holos/fun/activateLinkedHolon.js",
+		"/C/holos/pro/holos/fun/speak.js",
+		"/C/holos/pro/holos/fun/broadcastMessage.js",
+		"/C/holos/pro/holos/fun/describeLinkedHolon.js",
+		"/C/holos/pro/holos/fun_inactive/receiveMessage.js",
+		"/C/holos/pro/noola/fun/receiveMessage.js",
+		"/C/artinode/pro/noomap/server.js",
+		"/C/holos/pro/holos/fun/changeLink.js",
+		"/C/artinode/pro/noomap/pub/js/nm_Viewer.js",
+		"/C/holos/pro/holos/fun/linkHolons.js",
+		"/C/holos/pro/holos/fun_inactive/artinodeListener.js",
+		"/C/artinode/pro/noomap/core.js",
+		"/C/holos/pro/holos/fun_inactive/socketServer.js"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/larky/holos/pro/holos/fun",
+			"",
+			"C:\\holos\\pro\\holos\\pde",
+			"C:\\holos\\pro\\holos\\fun",
+			"C:\\artinode\\pro\\noomap\\pub\\js",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"	</",
+			"loadAddress",
+			"call",
+			"address",
+			"555",
+			"resetFrameRate",
+			"arcanSocket",
+			"socket",
+			"link",
+			"arcang",
+			"holosSocket",
+			"touched",
+			"loaded",
+			"sin",
+			"scene",
+			"prompt",
+			"second",
+			"msgtext",
+			"programStroke",
+			"utt",
+			"connected",
+			"noola",
+			"voice",
+			"speaktext",
+			"voice",
+			"utt =",
+			"speakText",
+			"speaktext",
+			"voices",
+			"speaktext",
+			"speech",
+			"font",
+			"ARTI",
+			"tempesta",
+			"seven",
+			"PF Tempesta Seven",
+			"tempesta",
+			"Tempesta",
+			"tempesta",
+			"Tempesta",
+			"speechSocket",
+			"files",
+			"var",
+			"match",
+			"var",
+			"            ",
+			"parsed",
+			"font",
+			"playId",
+			"nextVideo",
+			"stopVideo",
+			"media",
+			"holloway",
+			"islington",
+			"		",
+			"scale",
+			"geo",
+			"setup",
+			"fishponds",
+			"North Nibley",
+			"gloucestershire",
+			"\"",
+			"targetSpaceHolon",
+			"showCoupl",
+			"setupSpace",
+			"unlink",
+			"artiWidget",
+			"draggingHolon",
+			"targetSpace",
+			"widgetDragging",
+			"widgets",
+			"showCouplings",
+			"resizing",
+			"targetPa",
+			"resizing",
+			"resize",
+			"mouseX",
+			"mouseJustReleased",
+			"mouse",
+			"drawCode",
+			".a1",
+			"artiface",
+			"requestedGrandChildren",
+			"receiveHolonPack",
+			"getHolon",
+			"mind",
+			"getHolon",
+			".ch",
+			"target",
+			"registerHolonActivation",
+			"mouseDragging",
+			".mover",
+			"timespace",
+			"setTargetSpace",
+			"targetS",
+			"mouseDownFor",
+			"video",
+			"files",
+			"video",
+			"body",
+			"findAtom",
+			"targetPare",
+			"parentHolon",
+			"parent",
+			"createHolonIn",
+			"createHolon",
+			"socket",
+			"destroyLink",
+			"mouseDragging",
+			"mousedragg",
+			"dragg",
+			"draggingHolon",
+			"decay",
+			"deactivate",
+			"activate",
+			"deactivate",
+			".a",
+			"decay",
+			"font",
+			"super",
+			"progress",
+			"artiCache",
+			"artiWidget",
+			"artiCache",
+			"artisoc",
+			"activate",
+			"artisocket",
+			"hasChildWithFunctionName"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"nodesphere",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "pub/index.html",
+					"settings":
+					{
+						"buffer_size": 3893,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								303,
+								303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 51.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "pde/vis.pde",
+					"settings":
+					{
+						"buffer_size": 1266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1130,
+								1130
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 714.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server.js",
+					"settings":
+					{
+						"buffer_size": 2383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"index",
+				"pub\\index.html"
+			],
+			[
+				"core",
+				"core.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/larky/holos/pro/holos/holos.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true
+}
