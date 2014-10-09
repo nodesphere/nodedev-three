@@ -44,7 +44,7 @@ app.get('/js/*.js', function (req, res) {
 app.get('/json/*.json', function (req, res) {
 	res.sendfile(noomapPublicRootPath + req.url);
 });
-app.get('/ico/*.ico', function (req, res) {
+app.get('/ico/*.(ico|png)', function (req, res) {
 	res.sendfile(noomapPublicRootPath + req.url);
 });
 app.get('/mp3/*.mp3', function (req, res) {
